@@ -12,6 +12,7 @@
         <item name="colorButtonNormal">@color/colorPrimaryDarkBlack</item>
         <item name="android:textColor">@color/colorTextBlack</item>
         <item name="colorAccent">@color/colorAccentBlack</item>
+        <item name="android:background">@color/colorBackgroundBlack</item>
     </style>
 
     <style name="AppThemeGreen" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -19,6 +20,7 @@
         <item name="colorButtonNormal">@color/colorPrimaryDarkGreen</item>
         <item name="android:textColor">@color/colorTextGreen</item>
         <item name="colorAccent">@color/colorAccentGreen</item>
+        <item name="android:background">@color/colorBackgroundGreen</item>
     </style>
 
     <style name="AppThemeBlue" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -26,6 +28,9 @@
         <item name="colorButtonNormal">@color/colorPrimaryDarkBlue</item>
         <item name="android:textColor">@color/colorTextBlue</item>
         <item name="colorAccent">@color/colorAccentBlue</item>
+        <item name="android:background">@color/colorBackgroundBlue</item>
     </style>
 
+    <color name="colorBackgroundGreen">#80A080</color>
+    <color name="colorBackgroundBlue">#8080A0</color>
 </resources>
