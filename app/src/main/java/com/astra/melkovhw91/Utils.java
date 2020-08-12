@@ -5,7 +5,7 @@ import android.content.Intent;
 
 public class Utils
 {
-    private static int sTheme;
+    private static int sTheme = R.style.AppThemeBlack;
 
     public final static int THEME_BLACK = 0;
     public final static int THEME_GREEN = 1;
@@ -20,7 +20,6 @@ public class Utils
         activity.finish();
 
         activity.startActivity(new Intent(activity, activity.getClass()));
-
     }
 
     /** Set the theme of the activity, according to the configuration. */

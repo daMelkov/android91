@@ -3,7 +3,9 @@ package com.astra.melkovhw91;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity {
@@ -12,15 +14,36 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        Utils.onActivityCreateSetTheme(this);
 
+        //setTheme(R.style.AppThemeGreen);
+        super.onCreate(savedInstanceState);
+        //Utils.onActivityCreateSetTheme(this);
+
+        setContentView(R.layout.activity_main);
         initViews();
     }
 
     private void initViews() {
         mLanguagesSpinner = findViewById(R.id.spinner_language);
         mStylesSpinner = findViewById(R.id.spinner_style);
+
+        Button btnChange = findViewById(R.id.button_change_language);
+        btnChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch(mStylesSpinner.getSelectedItemPosition()) {
+                    case 0:
+                        Utils.changeToTheme(MainActivity.this, Utils.THEME_BLACK);
+                        break;
+                    case 1:
+                        Utils.changeToTheme(MainActivity.this, Utils.THEME_GREEN);
+                        break;
+                    case 2:
+                        Utils.changeToTheme(MainActivity.this, Utils.THEME_BLUE);
+                }
+            }
+        });
 
         initSpinners();
     }
