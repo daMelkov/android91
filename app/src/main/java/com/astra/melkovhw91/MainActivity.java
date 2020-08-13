@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
     private Spinner mLanguagesSpinner;
     private Spinner mStylesSpinner;
@@ -16,11 +18,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Utils.onActivityCreateSetTheme(this);
 
-        //setTheme(R.style.AppThemeGreen);
         super.onCreate(savedInstanceState);
-        //Utils.onActivityCreateSetTheme(this);
-
         setContentView(R.layout.activity_main);
+
         initViews();
     }
 
@@ -32,15 +32,28 @@ public class MainActivity extends AppCompatActivity {
         btnChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch(mStylesSpinner.getSelectedItemPosition()) {
+                /* set locale */
+                Locale locale = new Locale("en");
+
+                switch((int) mLanguagesSpinner.getSelectedItemId()) {
                     case 0:
-                        Utils.changeToTheme(MainActivity.this, Utils.THEME_BLACK);
+                        locale = new Locale("en");
                         break;
                     case 1:
-                        Utils.changeToTheme(MainActivity.this, Utils.THEME_GREEN);
+                        locale = new Locale("ru");
+
+                }
+
+                /* set style */
+                switch(mStylesSpinner.getSelectedItemPosition()) {
+                    case 0:
+                        Utils.changeToTheme(MainActivity.this, Utils.THEME_BLACK, locale);
+                        break;
+                    case 1:
+                        Utils.changeToTheme(MainActivity.this, Utils.THEME_GREEN, locale);
                         break;
                     case 2:
-                        Utils.changeToTheme(MainActivity.this, Utils.THEME_BLUE);
+                        Utils.changeToTheme(MainActivity.this, Utils.THEME_BLUE, locale);
                 }
             }
         });
@@ -52,9 +65,15 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapterLanguages = ArrayAdapter.createFromResource(this, R.array.languages, android.R.layout.simple_spinner_item);
         adapterLanguages.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mLanguagesSpinner.setAdapter(adapterLanguages);
+        if(Utils.getLocale().toString().equals("ru")) {
+            mLanguagesSpinner.setSelection(1);
+        }
 
         ArrayAdapter<CharSequence> adapterStyles = ArrayAdapter.createFromResource(this, R.array.styles, android.R.layout.simple_spinner_item);
         adapterStyles.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mStylesSpinner.setAdapter(adapterStyles);
+        if(Utils.getTheme() < adapterStyles.getCount()) {
+            mStylesSpinner.setSelection(Utils.getTheme());
+        }
     }
 }
