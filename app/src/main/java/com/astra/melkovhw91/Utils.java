@@ -25,7 +25,7 @@ public class Utils
 
 
     /** Set the theme of the Activity, and restart it by creating a new Activity of the same type. */
-    public static void changeToTheme(Activity activity, int theme, Locale locale)
+    public static void changeUI(Activity activity, int theme, Locale locale)
     {
         sTheme = theme;
         sLocale = locale;

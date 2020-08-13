@@ -47,13 +47,13 @@ public class MainActivity extends AppCompatActivity {
                 /* set style */
                 switch(mStylesSpinner.getSelectedItemPosition()) {
                     case 0:
-                        Utils.changeToTheme(MainActivity.this, Utils.THEME_BLACK, locale);
+                        Utils.changeUI(MainActivity.this, Utils.THEME_BLACK, locale);
                         break;
                     case 1:
-                        Utils.changeToTheme(MainActivity.this, Utils.THEME_GREEN, locale);
+                        Utils.changeUI(MainActivity.this, Utils.THEME_GREEN, locale);
                         break;
                     case 2:
-                        Utils.changeToTheme(MainActivity.this, Utils.THEME_BLUE, locale);
+                        Utils.changeUI(MainActivity.this, Utils.THEME_BLUE, locale);
                 }
             }
         });
