@@ -8,6 +8,7 @@
     <color name="colorPrimaryDarkGreen">#006400</color>
     <color name="colorAccentGreen">#6B8E23</color>
     <color name="colorTextGreen">#A0F0A0</color>
+    <color name="colorBackgroundGreen">#80A080</color>
 
     <color name="colorPrimaryBlack" >#8B8B8B</color>
     <color name="colorPrimaryDarkBlack">#646464</color>
@@ -19,4 +20,5 @@
     <color name="colorPrimaryDarkBlue">#000064</color>
     <color name="colorAccentBlue">#6B238E</color>
     <color name="colorTextBlue">#A0A0F0</color>
+    <color name="colorBackgroundBlue">#8080A0</color>
 </resources>

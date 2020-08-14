@@ -30,7 +30,4 @@
         <item name="colorAccent">@color/colorAccentBlue</item>
         <item name="android:background">@color/colorBackgroundBlue</item>
     </style>
-
-    <color name="colorBackgroundGreen">#80A080</color>
-    <color name="colorBackgroundBlue">#8080A0</color>
 </resources>
