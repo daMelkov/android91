@@ -1,4 +1,4 @@
-package com.astra.melkovhw92;
+package com.astra.melkovhw91;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -35,6 +35,7 @@ public class Utils
             config.setLocale(locale);
 
             activity.getResources().updateConfiguration(config, activity.getBaseContext().getResources().getDisplayMetrics());
+            //activity.recreate();
         }
 
         activity.finish();

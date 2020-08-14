@@ -1,4 +1,4 @@
-package com.astra.melkovhw92;
+package com.astra.melkovhw91;
 
 import org.junit.Test;
 
